@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    #form {
+      border: 2px solid black;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      padding: 40px;
+      margin: 10% auto;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      color: rgb(5, 35, 123);
+    }
+    div {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      border: 1px solid #777;
+      border-radius: 8px;
+      outline: none;
+    }
+    input:focus {
+      border-color: rgb(5, 35, 123);
+    }
+    button {
+      color: rgb(5, 35, 123);
+      background-color: antiquewhite;
+      border-radius: 10px;
+      border: none;
+      width: 100px;
+      height: 35px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: rgb(245, 222, 179);
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .extra {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .extra a {
+      text-decoration: none;
+      color: rgb(5, 35, 123);
+    }
+  </style>
+</head>
+<body>
+  <form id="form" action="/HTML/Form/welcome.html" onsubmit="return validateLogin()">
+    <h1>Login Page</h1>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+    </div>
+
+    <div>
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" placeholder="Enter your password" required>
+    </div>
+
+    <div class="flex">
+      <button type="submit">Login</button>
+      <button type="reset">Reset</button>
+    </div>
+
+    <div class="extra">
+      <p>Don’t have an account? <a href="registration.html">Register here</a></p>
+    </div>
+  </form>
+
+  <script>
+    function validateLogin() {
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("pass").value;
+
+      if (pass.length < 6) {
+        alert("Password must be at least 6 characters long!");
+        return false;
+      }
+
+      alert("Login successful!");
+      return true;
+    }
+  </script>
+</body>
+</html> 
